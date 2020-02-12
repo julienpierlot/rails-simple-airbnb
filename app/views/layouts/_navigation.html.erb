@@ -1,0 +1,14 @@
+<div class="navigation">
+      <ul class="nav-items">
+        <li class="nav_item"><%= link_to 'home', flats_path %></li>
+        <li>
+          <div class="search-form">
+            <%= form_with url: '/search', method: 'get', local: true do |f| %>
+              <%= f.text_field :keywords %>
+              <%= f.submit 'Search' %>
+            <% end %>
+          </div>
+        </li>
+        <li class="nav_item"><%= link_to 'Add flat', new_flat_path %></li>
+      </ul>
+    </div>

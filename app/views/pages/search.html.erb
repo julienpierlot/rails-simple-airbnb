@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Search results (<%= @flats.count %>)</h1>
+      <ul class="list-group">
+        <% @flats.each do |flat| %>
+          <li class="list-group-item">
+            <div>
+              <%= image_tag flat.picture_url, class: 'banner' if flat.picture_url.present? %>
+              <%= link_to flat.name, flat_path(flat) %>
+              <p><%= flat.address %></p>
+              <span>Nb of guests: <%= flat.number_of_guests %></span>
+              <span>Price per night: <%= flat.price_per_night %></span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
