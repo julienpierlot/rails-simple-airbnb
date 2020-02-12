@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <% if flash %>
+      <div class="div">
+        <p><%= flash[:notice] %></p>
+      </div>
+    <% end %>
     <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
